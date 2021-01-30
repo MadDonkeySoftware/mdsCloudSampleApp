@@ -1,0 +1,9 @@
+identity_url="https://127.0.0.1:8081"
+qs_url="http://127.0.0.1:8083"
+fs_url="http://127.0.0.1:8084"
+sf_url="http://127.0.0.1:8085"
+sm_url="http://127.0.0.1:8086"
+account="1001"
+user_id="myUser"
+password="password"
+allow_self_signed_cert=true

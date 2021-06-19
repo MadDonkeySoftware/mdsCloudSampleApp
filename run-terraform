@@ -9,10 +9,13 @@ export TF_HTTP_PASSWORD=password
 
 rm -rf ./terraform/mdsCloudServerlessFunctions-sampleApp.zip
 zip -r ./terraform/mdsCloudServerlessFunctions-sampleApp.zip . \
-  -x ./terraform/**\* \
-  -x ./.git/**\* \
-  -x ./node_modules/**\* \
+  -x "./terraform/*" \
+  -x "./.git/*" \
+  -x "./.vscode/*" \
+  -x "./node_modules/*" \
   -x run-terraform \
+  -x README.md \
+  -x LICENSE \
   -x .gitignore \
   -q
 

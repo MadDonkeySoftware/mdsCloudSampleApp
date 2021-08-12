@@ -50,8 +50,15 @@ provider "mdscloud" {
 
 #########################################################
 
+resource "mdscloud_queue" "test_queue_dlq" {
+  name = "testQueueDlq"
+}
+
 resource "mdscloud_queue" "test_queue" {
   name = "testQueue"
+  resource = mdscloud_state_machine.test_sm.orid
+  # resource = mdscloud_function.sf_two.orid
+  dlq = mdscloud_queue.test_queue_dlq.orid
 }
 
 resource "mdscloud_container" "test" {

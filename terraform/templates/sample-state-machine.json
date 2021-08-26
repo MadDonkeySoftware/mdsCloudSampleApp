@@ -58,6 +58,19 @@
       "Next": "Success"
     },
     "Fail": {
+      "Type": "Task",
+      "Resource": "${sf_failed_orid}",
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "Next": "Fail"
+        }
+      ],
+      "Next": "FailWorkflow"
+    },
+    "FailWorkflow": {
       "Type": "Fail"
     },
     "Success": {

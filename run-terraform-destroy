@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+
+# NOTE: Using exported variables here so they are not in main.tf
+# Typically the contents of this file would be contained in your
+# build platform of choice. This file is purely for demonstration
+# purposes.
+export TF_HTTP_USERNAME=myUser
+export TF_HTTP_PASSWORD=password
+
+terraform -chdir=./terraform destroy --auto-approve --var-file=./test.tfvars

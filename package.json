@@ -8,5 +8,7 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "@maddonkeysoftware/mds-cloud-sdk-node": "^0.2.6"
+  }
 }

@@ -1,7 +1,3 @@
 {
-    "userId": "${user_id}",
-    "password": "${password}",
-    "account": "${account}",
-    "allowSelfSignCert": "${allow_self_signed_cert}",
     "queueId": "${queue_id}"
 }

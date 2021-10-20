@@ -93,10 +93,6 @@ resource "mdscloud_function" "sf_three" {
 data "template_file" "state_machine_failed_context" {
   template = file("${path.module}/templates/state-machine-failed-context.json")
   vars = {
-    user_id                = var.user_id
-    password               = var.password
-    account                = var.account
-    allow_self_signed_cert = var.allow_self_signed_cert
     queue_id               = mdscloud_queue.test_queue_dlq.orid
   }
 }
@@ -108,6 +104,7 @@ resource "mdscloud_function" "sf_stateMachineFail" {
   entry_point      = "src/stateMachineFail:main"
   source_code_hash = filebase64sha256("mdsCloudServerlessFunctions-sampleApp.zip")
   context          = data.template_file.state_machine_failed_context.rendered
+  // context          = "{\"queueId\":\"${mdscloud_queue.test_queue_dlq.orid}\"}"
 }
 
 data "template_file" "test_state_machine_definition" {
